@@ -4,18 +4,20 @@ namespace CalculationLibrary
 {
     public class Menu
     {
-        public double GetDouble(string prompt)
+        public float GetFload(string prompt)
         {
             string input;
-            double result;
+            float result;
             Console.Clear();
             Console.Write(prompt);
+
             while (true)
             {
                 input = Console.ReadLine();
+
                 try
                 {
-                    result = Double.Parse(input);
+                    result = float.Parse(input);
                     break;
                 }
                 catch
@@ -25,7 +27,7 @@ namespace CalculationLibrary
             }
             return result;
         }
-        public int DoMenu(int variant)
+        public int DoMenu()
         {
             int result;
             Console.Clear();
@@ -36,11 +38,13 @@ namespace CalculationLibrary
             while (true)
             {
                 string input = Console.ReadLine();
+
                 try
                 {
                     int minMenuValue = 0;
-                    int maxMenuValue = 2;
+                    int maxMenuValue = 1;
                     result = Int32.Parse(input);
+
                     if (result >= minMenuValue && result <= maxMenuValue)
                     {
                         break;

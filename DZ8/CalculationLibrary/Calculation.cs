@@ -4,8 +4,9 @@ namespace CalculationLibrary
 {
     public class Calculation
     {
-        private double A, B, C, d, x, x1, x2;
-        public Calculation(double a, double b, double c)
+        private float A, B, C, d, x, x1, x2;
+
+        public Calculation(float a, float b, float c)
         {
             this.A = a;
             this.B = b;
@@ -15,7 +16,6 @@ namespace CalculationLibrary
         public void Calculate ()
         {
             d = this.B * this.B - 4 * this.A * this.C;
-
 
             if (d < 0)
             {
@@ -30,9 +30,8 @@ namespace CalculationLibrary
             }
             if (d > 0)
             {
-
-                x1 = (-this.B - Math.Sqrt(d)) / 2 * this.A;
-                x2 = (-this.B + Math.Sqrt(d)) / 2 * this.A;
+                x1 = (-this.B - (float) Math.Sqrt(d)) / 2 * this.A;
+                x2 = (-this.B + (float) Math.Sqrt(d)) / 2 * this.A;
                 Console.WriteLine($"Дискриминант равен {d}. Первый корень равен {x1}. Второй корень равен {x2}.");
                 Console.WriteLine("\nНажмите enter чтобы продолжить.");
             }
